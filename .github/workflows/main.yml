@@ -1,2 +1,14 @@
 name: A workflow for my Moncc deploy
 on: push
+
+jobs:
+  deploy:
+    name: Moncc deploy action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./moncc-deploy
+        env:
+          MONCC_USERNAME: ${{ secrets.MonccUsername }}
+          MONCC_PASSWORE: ${{ secrets.MonccPassword }}
+          MONCCODE: ${{ secrets.Monccode }}
