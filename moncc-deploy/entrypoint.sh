@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+set -x
+
 monccd -s /var/run/monccd.sock --cluster-only --hypervised &
 
 MNCC="mncc --nofancy -s /var/run/monccd.sock"
