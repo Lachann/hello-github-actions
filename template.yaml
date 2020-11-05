@@ -1,0 +1,32 @@
+namespace: my-namespace
+
+my-runnable:
+  defines: runnable
+  containers: 
+    defines: containers
+    sc:
+      image: node:latest
+      entrypoint: <- `node /root/server.js`
+      ports:
+        - <- `0.0.0.0:3000:3000/tcp`
+  files:
+    defines: files
+    s:
+      path: /root/server.js
+      container: sc
+      contents: |
+        const http = require('http');
+
+        const hostname = '0.0.0.0';
+        const port = 3000;
+
+        const server = http.createServer((req, res) => {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/plain');
+          res.end('After Github Actions Test - Yippee-ki-yay, Motherfucker');
+        });
+
+        server.listen(port, hostname, () => {
+          console.log(`Server running at http://${hostname}:${port}/`);
+        });
+
