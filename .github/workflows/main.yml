@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./moncc-deploy
         env:
-          MONCC_USERNAME: ${{ secrets.MonccUsername }}
-          MONCC_PASSWORE: ${{ secrets.MonccPassword }}
-          MONCCODE: ${{ secrets.Monccode }}
+          MONCC_USER: ${{ secrets.MONCC_USER }}
+          MONCC_PASS: ${{ secrets.MONCC_PASS }}
+          MONCCODE: ${{ secrets.MONCCODE }}

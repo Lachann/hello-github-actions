@@ -1,7 +1,0 @@
-name: "Moncc deploy"
-description: "Deploy new version to cluster with Moncc"
-author: "author@github.com"
-
-runs:
-  using: "docker"
-  image: "Dockerfile"
