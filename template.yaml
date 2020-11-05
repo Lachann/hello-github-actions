@@ -23,7 +23,7 @@ my-runnable:
         const server = http.createServer((req, res) => {
           res.statusCode = 200;
           res.setHeader('Content-Type', 'text/plain');
-          res.end('After Github Actions Test - Yippee-ki-yay, Motherfucker');
+          res.end('after update - via CI/CD');
         });
 
         server.listen(port, hostname, () => {
