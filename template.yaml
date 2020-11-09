@@ -23,7 +23,7 @@ my-runnable:
         const server = http.createServer((req, res) => {
           res.statusCode = 200;
           res.setHeader('Content-Type', 'text/plain');
-          res.end('after update - via CI/CD - attempt 2');
+          res.end('new cluster CI/CD update');
         });
 
         server.listen(port, hostname, () => {
